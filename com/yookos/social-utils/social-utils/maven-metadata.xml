@@ -2,11 +2,10 @@
 <metadata>
   <groupId>com.yookos.social-utils</groupId>
   <artifactId>social-utils</artifactId>
-  <version>1.0-SNAPSHOT</version>
   <versioning>
     <versions>
       <version>1.0-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20130828164415</lastUpdated>
+    <lastUpdated>20131228063029</lastUpdated>
   </versioning>
 </metadata>
