@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-  <groupId>com.yookos.utils</groupId>
-  <artifactId>yookos-utils</artifactId>
+  <groupId>com.yookos.shoppingcart</groupId>
+  <artifactId>shopping-cart-utils</artifactId>
   <versioning>
     <versions>
       <version>1.0-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20140213112646</lastUpdated>
+    <lastUpdated>20140227165612</lastUpdated>
   </versioning>
 </metadata>

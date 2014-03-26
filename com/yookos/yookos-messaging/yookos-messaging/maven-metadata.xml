@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-  <groupId>com.yookos.utils</groupId>
-  <artifactId>yookos-utils</artifactId>
+  <groupId>com.yookos.yookos-messaging</groupId>
+  <artifactId>yookos-messaging</artifactId>
   <versioning>
     <versions>
       <version>1.0-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20140213112646</lastUpdated>
+    <lastUpdated>20140213111618</lastUpdated>
   </versioning>
 </metadata>
