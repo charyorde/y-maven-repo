@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+       xmlns:cxf="http://cxf.apache.org/core" xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+       xmlns:core="http://www.jivesoftware.com/schema/core"
+       
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+        http://www.directwebremoting.org/schema/spring-dwr http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd
+        http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+        http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
+		http://cxf.apache.org/jaxrs
+		http://cxf.apache.org/schemas/jaxrs.xsd
+		http://www.jivesoftware.com/schema/core
+        http://www.jivesoftware.com/schema/core.xsd"
+
+       default-autowire="no" default-init-method="init" default-destroy-method="destroy">
+       <import resource="classpath:META-INF/cxf/cxf.xml" />
+		<import resource="classpath:META-INF/cxf/cxf-extension-http-binding.xml" />
+		<import resource="classpath:META-INF/cxf/cxf-extension-jaxrs-binding.xml" />
+		<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+         
+    <bean id="gigyaAuthenticationProvider" class="com.jivesoftware.community.aaa.sso.gigya.GigyaAuthenticationProvider">
+        <property name="userDetailsService" ref="gigyaUserDetailsService" />
+    </bean>    
+
+	<bean id="gigyaConfiguration" class="com.jivesoftware.community.aaa.sso.gigya.JiveGlobalsGigyaConfiguration" />		
+	
+	<bean id="gigyaUserDetailsService" class="com.jivesoftware.community.aaa.sso.gigya.GigyaUserDetailsService">
+        <property name="externalIdentityManager" ref="externalIdentityManager" />
+    </bean>
+    
+    <bean id="gigyaUserSynchronizer" class="com.jivesoftware.community.aaa.sso.gigya.GigyaUserSynchronizer" parent="abstractSSOUserSynchronizer">
+        <property name="gigyaConfiguration" ref="gigyaConfiguration" />
+    </bean>
+    
+    <bean id="gigyaTypeProvider" class="com.jivesoftware.community.aaa.sso.gigya.GigyaTypeProvider">
+        <property name="gigyaUserSynchronizer" ref="gigyaUserSynchronizer" />
+        <property name="ssoUserSynchronizerProvider" ref="ssoUserSynchronizerProvider" />
+    </bean>
+    
+    <bean id="gigyaApi" class="com.gigya.api.GigyaApi">
+        <property name="gigyaConfiguration" ref="gigyaConfiguration" />
+    </bean>
+    
+    <bean id="sigUtils" class="com.gigya.socialize.SigUtils" />	    
+    
+    <bean id="gigyaCreateNewAccount" class="com.jivesoftware.community.aaa.sso.gigya.GigyaCreateNewAccount">        
+        <property name="confirmableAuthenticationCache" ref="confirmableAuthenticationCache" />
+        <property name="ssoGlobalConfiguration" ref="ssoGlobalConfiguration" />
+        <property name="gigyaApi" ref="gigyaApi" />
+<!--        <property name="gigyaCookie" ref="gigyaCookie" />-->
+		<property name="profileManager" ref="profileManager"/>
+		<property name="profileFieldManager" ref="profileFieldManager"/>
+        <property name="userAccountFormValidator" ref="userAccountFormValidator"/>
+        <property name="emailValidationHelper" ref="emailValidationHelper"/>
+        <property name="trialManager" ref="trialManagerImpl"/>
+        <property name="emailManager" ref="emailManager"/>
+        <property name="newUserCache" ref="newUserCache"/>
+    </bean>    
+       
+    <bean id="gigyaLinkAccounts" class="com.jivesoftware.community.aaa.sso.gigya.GigyaLinkAccounts">
+        <property name="gigyaApi" ref="gigyaApi" />
+        <property name="authenticationManager" ref="authenticationManager"/>
+        <property name="profileManager" ref="profileManager"/>
+		<property name="profileFieldManager" ref="profileFieldManager"/>    
+    </bean>
+    
+    <bean id="gigyaValidateAction" class="com.jivesoftware.community.aaa.sso.gigya.GigyaValidateAction">
+        <property name="gigyaApi" ref="gigyaApi" />
+        <property name="ssoSchemeRegistry" ref="ssoSchemeRegistry" />
+        <property name="emailValidationHelper" ref="emailValidationHelper" />
+        <property name="newUserCache" ref="newUserCache" />
+    </bean>
+    
+    <bean id="gigyaSSOConfirmAction" class="com.jivesoftware.community.aaa.sso.gigya.GigyaSSOConfirmAction">        
+        <property name="confirmableAuthenticationCache" ref="confirmableAuthenticationCache" />
+        <property name="ssoGlobalConfiguration" ref="ssoGlobalConfiguration" />
+        <property name="gigyaLoginDao" ref="gigyaLoginDao" />
+        <property name="gigyaApi" ref="gigyaApi" />
+        <property name="profileManager" ref="profileManager"/>
+		<property name="profileFieldManager" ref="profileFieldManager"/>       
+    </bean>
+    
+    <bean id="gigyaProcessingFilter" class="com.jivesoftware.community.aaa.sso.gigya.GigyaAuthenticationFilter">
+        <constructor-arg value="/gigya/sso"/>
+        <property name="gigyaAuthenticationProvider" ref="gigyaAuthenticationProvider" />
+        <property name="gigyaConfiguration" ref="gigyaConfiguration"/>
+        <!-- abstract auth filter requires the manager set. this isnt being used -->
+        <property name="authenticationManager" ref="authenticationManager"/>
+        <property name="gigyaUserSynchronizer" ref="gigyaUserSynchronizer"/>
+        <property name="sessionAuthenticationStrategy" ref="sessionAuthenticationStrategy" />
+        <property name="confirmableAuthenticationCache" ref="confirmableAuthenticationCache" />
+        <property name="postAuthenticationSetupStrategy" ref="postAuthenticationSetupStrategy" />
+        <property name="gigyaApi" ref="gigyaApi" />
+<!--        <property name="gigyaCookie" ref="gigyaCookie" />-->
+    </bean>
+    
+    <bean id="gigyaSsoFilterChain" parent="ssoFilterChain" class="com.jivesoftware.community.aaa.util.spring.MergeableFilterChainProxy">  
+        <security:filter-chain-map path-type="ant">  
+            <security:filter-chain pattern="/**"
+                                   filters="gigyaFilterChain"/>
+        </security:filter-chain-map>  
+    </bean> 
+
+    <bean id="gigyaFilterChain" class="org.springframework.security.web.FilterChainProxy">
+        <security:filter-chain-map path-type="ant">
+            <security:filter-chain pattern="/gigya/sso" filters="gigyaProcessingFilter"/>
+        </security:filter-chain-map>
+    </bean>
+
+   	<bean id="gigyaLoginDao" class="com.gigya.dao.GigyaLoginDaoImpl">        
+       	<property name="dataSource">
+			<util:property-path path="dataSourceFactory.dataSource" />
+		</property>
+    </bean>
+
+    <!--
+        Changes below are for the iframe integration widget
+    -->
+    <bean id="toUserBean" class="com.yookos.integration.IFrameIntegration">
+        <property name="userItemBeanBuilder" ref="userItemBeanBuilder"/>
+    </bean>
+
+    <!--
+        End: iFrame integration widget
+    -->
+
+    <!--
+    Actions Extension Service: MS-70
+    -->
+    <bean id="toDoActivityEntityConverterV3" parent="abstractEntityConverterV3" class="com.yookos.api.core.v3.converters.communications.ToDoActivityEntityConverter">
+        <property name="activityObjectEntityHelper" ref="activityObjectEntityHelperV3"/>
+        <property name="customizers" ref="toDoActivityEntityCustomizersV3"/>
+        <property name="jiveObjectLoader" ref="jiveObjectLoader"/>
+        <property name="jiveObjectProvider" ref="jiveObjectProviderV3"/>
+        <property name="localeProvider" ref="localeProviderV0"/>
+        <property name="userManager" ref="userManager"/>
+
+        <property name="authenticationProvider" ref="authenticationProvider"/>
+        <property name="browseManager" ref="browseManager"/>
+        <property name="coreErrorBuilder" ref="coreErrorBuilderV3"/>
+        <property name="coreObjectTypeProvider" ref="coreObjectTypeProviderV3"/>
+        <property name="servicePathProvider" ref="servicePathProviderV3"/>
+        <property name="textConverter" ref="textConverterV3"/>
+        <property name="renderManager" ref="globalRenderManager"/>
+    </bean>
+
+    <!--bean id="actionProviderV3" parent="abstractInboxProviderV3"
+          class="com.jivesoftware.api.core.v3.providers.communications.ActionProvider">
+        <property name="jiveObjectLoader" ref="jiveObjectLoader"/>
+        <property name="streamEntryManager" ref="streamEntryManager"/>
+        <property name="toDoActivityEntityConverter" ref="toDoActivityEntityConverterV3"/>
+    </bean-->
+    <!-- End: Actions Extension Service -->
+    
+    <bean id="newUserCache" parent="cacheBean" depends-on="cacheFactoryManager">
+        <constructor-arg value="Cache to hold a boolean value to flag if its a new user registration" />
+    </bean>
+    
+    <!-- this is the shareplugin beans -->
+    
+    <jaxrs:server id="sharewebservice" address="/shareservice">
+		<jaxrs:serviceBeans>
+			<bean class="com.yookos.ws.ShareServiceImpl">
+				<property name="userManager" ref="userManager" />
+				<property name="authenticationProvider" ref="authenticationProvider" />
+				<property name="userStatusManager" ref="userStatusManager" />
+        		<property name="commentManager" ref="commentManagerImpl"/>
+				<property name="jiveObjectLoader" ref="jiveObjectLoaderImpl"/>
+			</bean> 
+		</jaxrs:serviceBeans>
+		
+		<jaxrs:providers>
+			<ref bean="jaxbProvider" />
+		</jaxrs:providers>	
+	</jaxrs:server>
+	
+	<bean id="jaxbProvider" class="org.apache.cxf.jaxrs.provider.JAXBElementProvider">
+		<property name="marshallerProperties">
+			<map>
+				<entry key="jaxb.formatted.output">
+					<value type="java.lang.Boolean">true</value>
+				</entry>
+			</map>
+		</property>
+	</bean>	
+    
+    <bean id="shareAction" class="com.yookos.action.ShareAction">
+ 		<property name="userManager" ref="userManager" />
+		<property name="authenticationProvider" ref="authenticationProvider" />
+		<property name="userStatusManager" ref="userStatusManager" />
+	</bean>
+	
+	<!-- End of shareplugin beans -->
+    <!-- Extending the personService to expose the additional social login features -->
+    <core:service id="personServiceV3" v="3" parent="abstractServiceV3"
+                  class="com.yookos.api.core.v3.services.users.PersonService">
+        <property name="activityProvider" ref="activityProviderV3"/>
+        <property name="commonContentProvider" ref="commonContentProviderV3"/>
+        <property name="personProvider" ref="personProviderV3"/>
+        <property name="profileImageProvider" ref="profileImageProviderV3"/>
+        <property name="streamProvider" ref="streamProviderV3"/>
+        <property name="gigyaApi" ref="gigyaApi" />
+        <property name="browserEventManager" ref="browserEventManager"/>
+
+        <property name="containerServiceImpl" ref="containerServiceImpl"/>
+        <property name="placeEntityConverter" ref="spaceEntityConverterV3" />
+        <property name="groupEntityConverter" ref="groupEntityConverterV3" />
+        <property name="containerManager" ref="jiveContainerManagerImpl"/>
+
+        <property name="termsAndConditionsHelper" ref="termsAndConditionsHelper"/>
+        <property name="registrationManager" ref="registrationManagerImpl"/>
+        <property name="globalRenderManager" ref="globalRenderManager"/>
+        <property name="userManager" ref="userManagerImpl"/>
+
+        <property name="userRelationshipManager" ref="userRelationshipManagerImpl" />
+        <property name="inviteService" ref="inviteServiceV3" />
+        <!--property name="coreErrorBuilder" ref="coreErrorBuilderV3"/ -->
+        <property name="inviteProvider" ref="inviteProviderV3"/>
+        <property name="inboxManager" ref="inboxManagerImpl" />
+        <property name="streamConfigurationService" ref="streamConfigurationServiceImpl"/>
+
+        <property name="streamHelper" ref="streamHelper"/>
+        <property name="notificationSettingsManager" ref="notificationSettingsManagerImpl"/>
+        <property name="avatarManager" ref="avatarManagerImpl"/>
+        <property name="imageManager" ref="imageManager"/>
+
+        <property name="browseManager" ref="browseManager"/>
+        <property name="profileSecurityManager" ref="profileSecurityManagerImpl"/>
+        <property name="profileManager" ref="profileManagerImpl"/>
+        <property name="profileFieldManager" ref="profileFieldManager"/>
+        <property name="tagManager" ref="tagManagerImpl"/>
+
+        <property name="actionProvider" ref="actionProviderV3"/>
+    </core:service>
+</beans>
