@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/gigya/bean
+END
+GigyaLoginDetails.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/gigya/bean/GigyaLoginDetails.java
+END
+CustomJiveUser.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/gigya/bean/CustomJiveUser.java
+END
+RequiredFields.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/gigya/bean/RequiredFields.java
+END
+GigyaSSOBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/gigya/bean/GigyaSSOBean.java
+END
