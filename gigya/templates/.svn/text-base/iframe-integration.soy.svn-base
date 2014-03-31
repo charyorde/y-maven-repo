@@ -1,0 +1,27 @@
+{namespace com.yookos.integration}
+
+/**
+ * iframe integration  soy template
+ *
+ * @param user The logged in user
+ * @param link the url to inject into the frame
+ * @param allowed a flag on whether the URL is permitted or not
+ */
+{template .main}
+	/* only display when user is logged in */
+	{if $user.id != '-1' and $user.username != 'ANONYMOUS' and $allowed}
+        <div id="integration-panel">
+            <script type="text/javascript">
+                var dbl_url = "{$link}";
+                var dbl_src = dbl_url + "?id=" + {$user.id} + "&s=yookos";
+                document.write('<iframe id="integration" src="' + dbl_src + '" width="1020" height="1900" frameborder="0" border="0" scrolling="no" allowtransparency="true"><\/iframe>');
+            </script>
+        </div>
+    {else}
+         <div id="integration-panel">
+             The site '{$link}' added to this widget has not been verified.
+             Please contact <a href="mailto:support@yookos.com?Subject=Domain%20Verification">support</a> to have it verified with Yookos.
+
+         </div>
+    {/if}
+{/template}

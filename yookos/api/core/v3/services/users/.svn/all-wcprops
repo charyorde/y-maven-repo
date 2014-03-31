@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/yookos/api/core/v3/services/users
+END
+PersonService.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/yookos/api/core/v3/services/users/PersonService.java
+END
+AvatarEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/yookos/api/core/v3/services/users/AvatarEntity.java
+END

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/plugin/resources/templates
+END
+gigya-confirm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/plugin/resources/templates/gigya-confirm.ftl
+END
+gigya-registration-complete.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/plugin/resources/templates/gigya-registration-complete.ftl
+END
+gigya-create-new-account.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/plugin/resources/templates/gigya-create-new-account.ftl
+END
+old-login.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/plugin/resources/templates/old-login.ftl
+END
+gigya-login.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/plugin/resources/templates/gigya-login.ftl
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/plugin/resources/templates/readme.txt
+END
+gigya-link-accounts.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/plugin/resources/templates/gigya-link-accounts.ftl
+END
+home.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/plugin/resources/templates/home.ftl
+END
+iframe-integration.soy
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/plugin/resources/templates/iframe-integration.soy
+END
+share_login.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/plugin/resources/templates/share_login.ftl
+END

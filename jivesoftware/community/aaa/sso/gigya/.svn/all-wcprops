@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/jivesoftware/community/aaa/sso/gigya
+END
+GigyaAuthenticationToken.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/jivesoftware/community/aaa/sso/gigya/GigyaAuthenticationToken.java
+END
+GigyaSSOConfirmAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/jivesoftware/community/aaa/sso/gigya/GigyaSSOConfirmAction.java
+END
+GigyaAuthenticationFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/jivesoftware/community/aaa/sso/gigya/GigyaAuthenticationFilter.java
+END
+GigyaUserDetailsService.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/jivesoftware/community/aaa/sso/gigya/GigyaUserDetailsService.java
+END
+GigyaConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/jivesoftware/community/aaa/sso/gigya/GigyaConfiguration.java
+END
+GigyaValidateAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/jivesoftware/community/aaa/sso/gigya/GigyaValidateAction.java
+END
+GigyaCookie.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/jivesoftware/community/aaa/sso/gigya/GigyaCookie.java
+END
+JiveGlobalsGigyaConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/jivesoftware/community/aaa/sso/gigya/JiveGlobalsGigyaConfiguration.java
+END
+GigyaAuthenticationProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/jivesoftware/community/aaa/sso/gigya/GigyaAuthenticationProvider.java
+END
+GigyaCreateNewAccount.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/jivesoftware/community/aaa/sso/gigya/GigyaCreateNewAccount.java
+END
+GigyaConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/jivesoftware/community/aaa/sso/gigya/GigyaConstants.java
+END
+GigyaTypeProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/jivesoftware/community/aaa/sso/gigya/GigyaTypeProvider.java
+END
+GigyaUserSynchronizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/jivesoftware/community/aaa/sso/gigya/GigyaUserSynchronizer.java
+END
+GigyaLinkAccounts.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/jivesoftware/community/aaa/sso/gigya/GigyaLinkAccounts.java
+END

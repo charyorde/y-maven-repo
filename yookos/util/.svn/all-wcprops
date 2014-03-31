@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/yookos/util
+END
+ShareServiceUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/yookos/util/ShareServiceUtil.java
+END
+EmailRegEx.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/yookos/util/EmailRegEx.java
+END
+ProfileFieldUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/yookos/util/ProfileFieldUtils.java
+END
+EmailValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/yookos/!svn/ver/5/branches/3.2/social-integration/src/main/java/com/yookos/util/EmailValidator.java
+END
