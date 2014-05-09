@@ -1,0 +1,1 @@
+jive.namespace("UserPrefs.Mobile");jive.UserPrefs.Mobile.FirstVisit=jive.AbstractView.extend(function(a){a.init=function(c){var b=this;this.content=$j(c);this.content.delegate(".js-first-visit","click",function(d){b.emit("close",c);d.preventDefault()})}});

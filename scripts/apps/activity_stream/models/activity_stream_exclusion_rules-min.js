@@ -1,0 +1,1 @@
+jive.namespace("ActivityStream");jive.ActivityStream.ActivityStreamExclusionRules=$Class.extend({init:function(a){this.exclusionRules=a.exclusionRules}});

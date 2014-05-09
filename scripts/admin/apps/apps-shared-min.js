@@ -1,0 +1,1 @@
+function radioCheck(){$j('input[type="radio"]').each(function(){if($j(this).is(":checked")){$j(this).closest("li").addClass("checked").find(".test-row").fadeIn(300)}else{$j(this).closest("li").removeClass("checked").find(".test-row").fadeOut(300).find(".info-message").hide()}})}$j(function(){radioCheck();$j('input[type="radio"]').change(radioCheck);$j(".info-message").hide()});

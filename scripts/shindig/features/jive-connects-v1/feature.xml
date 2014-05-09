@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<feature>
+    <name>jive-connects-v1</name>
+    <dependency>jive-namespace</dependency>
+    <dependency>oauthpopup</dependency>
+    <dependency>opensocial-1.0</dependency>
+    <dependency>opensocial-data</dependency>
+    <dependency>osapi</dependency>
+    <gadget>
+        <script src="jive-connects.js"/>
+    </gadget>
+</feature>

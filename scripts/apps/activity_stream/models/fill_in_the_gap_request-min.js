@@ -1,0 +1,1 @@
+jive.namespace("ActivityStream");jive.ActivityStream.FillInTheGapRequest=$Class.extend({init:function(a){this.originalIDs=a.originalIDs;this.timestamp=a.timestamp;this.fullContent=a.fullContent;this.pageSize=a.pageSize}});

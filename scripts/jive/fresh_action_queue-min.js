@@ -1,0 +1,1 @@
+define("jive.conc.FreshActionQueue",["jquery"],function(a){return function b(){var c=[];function d(g){var f=new a.Deferred();c.push(g);function e(){var h=c.lastIndexOf(g);if(h>-1){c=c.slice(h+1);g.then(function(){f.resolve.apply(f,arguments)},function(){f.reject.apply(f,arguments)})}}g.then(e,e,function(){f.notify.apply(f,arguments)});return f.promise()}return{push:d}}});

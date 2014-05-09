@@ -1,0 +1,1 @@
+jive.AppInstanceSource=jive.RestService.extend(function(a){a.init=function(b){this.resourceType="instance";this.pluralizedResourceType="instances";this.RESOURCE_ENDPOINT=jive.api.apps(this.pluralizedResourceType)}});

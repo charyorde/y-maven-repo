@@ -1,0 +1,1 @@
+jive.namespace("market",{getSbsContext:function(a){gadgets.rpc.call(null,"get_sbs_context",a,null)},getDashboardInfo:function(a){gadgets.rpc.call(null,"getDashboardInfo",a,null)},fireEvents:function(b,a){if(a&&a.events&&a.events.length){gadgets.rpc.call(null,"fire_market_events",b,a)}},getApiDescriptor:function(){return{}}});

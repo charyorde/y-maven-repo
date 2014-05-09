@@ -1,0 +1,1 @@
+if(typeof Object.values=="undefined"){Object.values=function(c){var b=[];for(var a in c){if(c.hasOwnProperty(a)){b.push(c[a])}}return b}};

@@ -1,0 +1,1 @@
+jive.namespace("RecommendationApp").recentViewedVideosActivityPageController={initialize:function(){alert("recentViewedVideosPageController is initialized");function A(){alert("polling...")}A()}}

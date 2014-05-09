@@ -1,0 +1,1 @@
+jive.RecentPlacesSource=jive.HistorySource.extend(function(a,b){a.init=function(c){b.init.call(this,$j.extend({filterID:"9003"},c))}});

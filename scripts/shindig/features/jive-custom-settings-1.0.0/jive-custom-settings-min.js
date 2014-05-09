@@ -1,0 +1,1 @@
+jive.namespace("opensocial",{editingDone:function(b,c){var a={message:b,refreshApp:true};gadgets.rpc.call(null,"editing_finished",null,a)},editingCanceled:function(b){var a={message:b};gadgets.rpc.call(null,"editing_canceled",null,a)}});

@@ -1,0 +1,1 @@
+jQuery.quickSilverFilter=function(a,f,b,c){var e=$j.trim(f.toLowerCase()),g=[];if(c==null){c=function(h){return h}}if(!e){return a}else{var d=[];jQuery(a).each(function(h,j){var k=c(j).score(e);if(k>0){g.push([k,h])}});jQuery.each(g.sort(function(i,h){return h[0]-i[0]}),function(){d.push(a[this[1]])});if(b!=null&&d.length>b){d=d.slice(0,b)}return d}};

@@ -1,0 +1,1 @@
+jive.namespace("ActivityStream");jive.ActivityStream.FillInTheGapResponse=$Class.extend({init:function(a){this.hasMore=a.hasMore;this.items=a.items}});

@@ -1,0 +1,1 @@
+Modernizr.addTest("formdata",function(){return !!window.FormData});

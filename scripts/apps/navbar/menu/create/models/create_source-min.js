@@ -1,0 +1,1 @@
+jive.namespace("Navbar.Menu.Create");jive.Navbar.Menu.CreateSource=jive.RestService.extend(function(a){a.resourceType=a.pluralizedResourceType="createmenu"});

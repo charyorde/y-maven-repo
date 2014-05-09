@@ -1,0 +1,1 @@
+jive.namespace("terms");jive.terms.Source=jive.RestService.extend(function(A){A.resourceType=A.pluralizedResourceType="contents";this.init=function(B){this.RESOURCE_ENDPOINT=_jive_base_url+"/api/core/v3/"+A.resourceType};this.get=function(C){var B=this.RESOURCE_ENDPOINT+"/"+C;return this.commonAjaxRequest(new jive.conc.Promise(),"GET",{url:B})}})

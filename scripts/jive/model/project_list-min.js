@@ -1,0 +1,1 @@
+jive.model.ProjectCacheListener=function(){this.loadProject=function(a){};this.beginLoadingProjects=function(){};this.doneLoadingProjects=function(){};this.loadingProjectsFailed=function(){}};

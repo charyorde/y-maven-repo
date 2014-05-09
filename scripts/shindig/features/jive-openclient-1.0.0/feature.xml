@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<feature>
+  <name>jive-openclient-1.0.0</name>
+  <dependency>jquery-1.4.2</dependency>
+  <dependency>jive-namespace</dependency>
+  <gadget>
+    <script src="jive-openclient.js"/>
+    <!-- <script src="taming.js"/> - not sure if needed. related to caja -->
+  </gadget>
+</feature>

@@ -1,0 +1,1 @@
+jive.namespace("AskAQuestion");jive.AskAQuestion.Main=jive.oo.Class.extend(function(a){var b=jive.AskAQuestion,c=jQuery;a.init=function(e){var d=this;this.view=new b.View(e);this.source=new b.Source(e);this.view.addListener("search",function(f){d.source.search(f).addCallback(function(g){d.view.success(g)})});this.view.addListener("referrer",d.source.referrer)}});

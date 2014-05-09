@@ -1,0 +1,1 @@
+jive.namespace("rte.ContentPicker");jive.rte.ContentPicker.main=function(){var a=new jive.rte.ContentPicker.ContentPickerController();var b=new jive.rte.ContentPicker.MainPage(a)};tinyMCEPopup.onInit.add(function(a){jive.rte.ContentPicker.main()});

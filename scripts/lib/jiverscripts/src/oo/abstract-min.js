@@ -1,0 +1,1 @@
+this.jive=this.jive||{};jive.oo=jive.oo||{};jive.oo["abstract"]=function(){};jive.oo._abstract=jive.oo["abstract"];

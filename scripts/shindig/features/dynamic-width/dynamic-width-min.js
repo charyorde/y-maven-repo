@@ -1,0 +1,1 @@
+gadgets.window=gadgets.window||{};(function(){gadgets.window.adjustWidth=function(a){a=parseInt(a,10);var b=a||gadgets.window.getWidth();gadgets.rpc.call(null,"resize_iframe_width",null,b)}}());var _IG_AdjustIFrameWidth=gadgets.window.adjustWidth;

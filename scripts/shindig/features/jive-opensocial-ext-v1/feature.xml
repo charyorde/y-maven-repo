@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<feature>
+  <name>jive-opensocial-ext-v1</name>
+  <dependency>opensocial</dependency>
+  <gadget>
+    <script src="container.js"/>
+  </gadget>
+</feature>

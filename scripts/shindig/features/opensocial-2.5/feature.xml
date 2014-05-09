@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!--
+  Copyright (C) 1999-2012 Jive Software. All rights reserved.
+  This software is the proprietary information of Jive Software. Use is subject to license terms.
+-->
+<feature>
+  <name>opensocial-2.5</name>
+  <dependency>opensocial</dependency>
+</feature>

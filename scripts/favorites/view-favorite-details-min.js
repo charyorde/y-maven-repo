@@ -1,0 +1,1 @@
+var __jiveViewFavoriteDetailsInit=false;$j(function(){if(__jiveViewFavoriteDetailsInit){return}$j("#show-more").live("click",function(){$j(this).hide();var a=$j(this).attr("target");$j(".jive-site-recent-notes-tags").load(jiveSiteRecentNotesTagsLink,a);return false});__jiveViewFavoriteDetailsInit=true});

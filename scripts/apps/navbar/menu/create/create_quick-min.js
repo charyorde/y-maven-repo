@@ -1,0 +1,1 @@
+jive.namespace("Navbar.Menu.CreateQuick");jive.Navbar.Menu.CreateQuick.Main=jive.oo.Class.extend(function(a){a.init=function(b){$j(b).click(function(c){var d=$j.deparam.querystring($j(this).attr("href"));if(d.contentType){jive.localexchange.emit("actions.create",{contentType:d.contentType,upload:(d.upload&&d.upload!="false")?d.upload:false});c.preventDefault()}})}});

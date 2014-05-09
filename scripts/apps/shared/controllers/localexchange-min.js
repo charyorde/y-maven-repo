@@ -1,0 +1,1 @@
+(function(){jive.localexchange=jive.localexchange||(function(){var a={};jive.conc.observable(a);return a})()})();

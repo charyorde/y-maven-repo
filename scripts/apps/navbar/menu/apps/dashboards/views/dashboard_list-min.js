@@ -1,0 +1,1 @@
+jive.namespace("Navbar.Menu.Apps.Dashboards");jive.Navbar.Menu.Apps.Dashboards.ListView=jive.Navbar.Menu.AbstractListView.extend(function(a){var b=jQuery;this.render=function(d){var c=b(jive.nav.menu.apps.dashboards.content({links:d}));this.$menu.html(c)};this.toggleButton=function(d){var c=this;if(d>1){c.$button.show()}else{c.$button.hide()}}});

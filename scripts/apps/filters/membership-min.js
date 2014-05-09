@@ -1,0 +1,1 @@
+jive.namespace("Filters");jive.Filters.Membership=jive.Filters.Main.extend(function(a,b){this.init=function(d){b.init.call(this,d);var c=this;jive.switchboard.addListener("sgroup.member.leave",function(f){var e=c.getState().filterID;if(e.length>0&&e[0].indexOf("member")==0){c.removeGridItem({id:f,type:700})}})}});

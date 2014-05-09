@@ -1,0 +1,1 @@
+jive.namespace("ActivityStream");jive.ActivityStream.FullRepliesRequest=$Class.extend({init:function(a){this.originalIDs=a.originalIDs}});

@@ -1,0 +1,1 @@
+tamings___.push(function(a){caja___.whitelistFuncs([[gadgets.window,"getWidth"]])});

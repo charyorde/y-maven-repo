@@ -1,0 +1,1 @@
+jive.namespace("Navbar.Menu.Create");jive.Navbar.Menu.Create.QuickCreateSource=jive.oo.Class.extend(function(a){this.fetch=function(b,d){var c=d||new jive.conc.Promise();$j.get(b,function(e){c.emitSuccess({body:e})});return c}});

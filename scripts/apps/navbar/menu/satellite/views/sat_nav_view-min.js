@@ -1,0 +1,1 @@
+jive.namespace("Navbar.Menu.Satellite");jive.Navbar.Menu.Satellite.View=jive.Navbar.Menu.AbstractListView.extend(function(a,b){var c=jQuery;this.render=function(e){var d=$j(jive.nav.profileMenu({satelliteMenuView:e,user:this.menuOpts.user}));this.setContent(d)}});

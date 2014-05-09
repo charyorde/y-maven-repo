@@ -1,0 +1,133 @@
+features/globals/feature.xml
+# [HS] Override default actions feature below
+# features/actions/feature.xml
+features/auth-refresh/feature.xml
+features/container/feature.xml
+features/container.gadget/feature.xml
+features/container.url/feature.xml
+features/container.util/feature.xml
+features/content-rewrite/feature.xml
+features/core.config/feature.xml
+features/core.config.base/feature.xml
+# [HS] Override for IE7 leak
+# features/core.io/feature.xml
+features/core.json/feature.xml
+features/core.legacy/feature.xml
+features/core.log/feature.xml
+features/core.none/feature.xml
+features/core.prefs/feature.xml
+features/core.util/feature.xml
+features/core.util.base/feature.xml
+features/core.util.dom/feature.xml
+features/core.util.event/feature.xml
+features/core.util.onload/feature.xml
+features/core.util.string/feature.xml
+features/core.util.urlparams/feature.xml
+features/core/feature.xml
+features/defer.test/feature.xml
+features/deferjs/feature.xml
+# [HS] Override default dynamic-* features below
+# features/dynamic-height.height/feature.xml
+# features/dynamic-height/feature.xml
+# features/dynamic-size.util/feature.xml
+# features/dynamic-width.width/feature.xml
+# features/dynamic-width/feature.xml
+# [HS] Override default rpc feature below
+# features/embeddedexperiences/feature.xml
+features/exportjs/feature.xml
+features/flash/feature.xml
+features/gadgets.json.ext/feature.xml
+features/i18n/feature.xml
+features/jsondom/feature.xml
+features/locked-domain/feature.xml
+features/minimessage/feature.xml
+features/oauthpopup/feature.xml
+features/opensearch/feature.xml
+features/opensocial-0.8/feature.xml
+features/opensocial-0.9/feature.xml
+features/opensocial-1.0/feature.xml
+features/opensocial-base/feature.xml
+features/opensocial-current/feature.xml
+features/opensocial-data-context/feature.xml
+features/opensocial-data/feature.xml
+features/opensocial-jsonrpc/feature.xml
+features/opensocial-reference/feature.xml
+# [HS] Override default opensocial-templates
+# features/opensocial-templates/feature.xml
+features/open-views/feature.xml
+features/osapi.base/feature.xml
+features/osapi/feature.xml
+features/osml/feature.xml
+features/pubsub/feature.xml
+# [HS] Override default rpc feature below
+# features/rpc/feature.xml
+features/security-token/feature.xml
+features/selection/feature.xml
+features/setprefs/feature.xml
+features/settitle/feature.xml
+features/shindig.auth/feature.xml
+features/shindig.container/feature.xml
+features/shindig.container-1.0/feature.xml
+features/shindig.random/feature.xml
+features/shindig.sha1/feature.xml
+features/shindig.uri/feature.xml
+features/shindig.uri.ext/feature.xml
+features/shindig.xhrwrapper/feature.xml
+features/skins/feature.xml
+features/swfobject/feature.xml
+features/tabs/feature.xml
+features/taming/feature.xml
+# [HS] Override default views feature below
+# features/views/feature.xml
+features/xhrwrapper/feature.xml
+features/xmlutil/feature.xml
+
+features-extras/pubsub-2/feature.xml
+features-extras/org.openajax.hub-2.0.5/feature.xml
+
+# TODO: [HS] override until we merge fix from Shindig updates to fix IE7 flash transport
+resources/scripts/shindig/features/rpc/feature.xml
+
+# TODO: [HS] override until we merge fix from Shindig updates to fix SHINDIG-1686
+resources/scripts/shindig/features/views/feature.xml
+
+# TODO: [HS] Override until we merge fix from Shindig updates
+resources/scripts/shindig/features/actions/feature.xml
+
+# TODO: [HS] override until fix to use different view other than embedded is checked in and pulled from Shindig
+resources/scripts/shindig/features/embeddedexperiences/feature.xml
+
+# TODO [HS] override until we merge back from Shindig trunk
+resources/scripts/shindig/features/opensocial-templates/feature.xml
+
+# TODO [HS] Add this until Shindig trunk support opensocial-2.5 feature
+resources/scripts/shindig/features/opensocial-2.5/feature.xml
+
+# TODO [HS] override until SHINDIG-1745 is ported
+resources/scripts/shindig/features/dynamic-height.height/feature.xml
+resources/scripts/shindig/features/dynamic-height/feature.xml
+resources/scripts/shindig/features/dynamic-width.width/feature.xml
+resources/scripts/shindig/features/dynamic-width/feature.xml
+
+# Override this to provide custom dynamic dimension calculation
+resources/scripts/shindig/features/dynamic-size.util/feature.xml
+
+# TODO [HS] override for IE7 leak, need to remove it when fix is pulled from Shindig trunk
+resources/scripts/shindig/features/core.io/feature.xml
+
+resources/scripts/shindig/features/jive-namespace/feature.xml
+resources/scripts/shindig/features/jive-binary-v1/feature.xml
+resources/scripts/shindig/features/jive-connects-v1/feature.xml
+resources/scripts/shindig/features/jive-market-1.0.0/feature.xml
+resources/scripts/shindig/features/jive-openclient-1.0.0/feature.xml
+resources/scripts/shindig/features/jive-core-v2/feature.xml
+resources/scripts/shindig/features/jive-core-v3/feature.xml
+resources/scripts/shindig/features/jive-core-5.0.0/feature.xml
+resources/scripts/shindig/features/jive-canvas-v1/feature.xml
+resources/scripts/shindig/features/jive-custom-settings-1.0.0/feature.xml
+resources/scripts/shindig/features/jive-opensocial-ext-v1/feature.xml
+resources/scripts/shindig/features/jive-core-container/feature.xml
+resources/scripts/shindig/features/jquery-1.4.2/feature.xml
+resources/scripts/shindig/features/jquery-1.4.4/feature.xml
+resources/scripts/shindig/features/jquery-1.5.2/feature.xml
+resources/scripts/shindig/features/jquery-1.6/feature.xml

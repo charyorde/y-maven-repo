@@ -1,0 +1,1 @@
+jive.namespace("Navbar.Menu.Search");define("jive.Navbar.Menu.Search.Main",["JiveSpotlightSearch","jive.Navbar.Search.SearchBox"],function(a,b){return jive.oo.Class.extend(function(c){this.init=function(e,f,g,d){this.searchBox=new b(e);this.searchObj=new a(e,f,g,d)};this.getSpotlightSearch=function(){return this.searchObj}})});

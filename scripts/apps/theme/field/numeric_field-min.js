@@ -1,0 +1,1 @@
+jive.namespace("Theme");jive.Theme.NumericField=function(b){var a=function(e){var d=b.data("min")||-Infinity,c=b.data("max")||Infinity;return e>d&&e<c};b.bind("keyup paste change",function(){var c=a(b.val())?[b.val()]:[];b.trigger("cssUpdate",c)});return{setValue:function(c){a(c)&&b.val(c)}}};

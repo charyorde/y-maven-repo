@@ -1,0 +1,1 @@
+osapi.container.actions={};osapi.container.actions.OptParam={};osapi.container.actions.OptParam.VIEW="view";osapi.container.actions.OptParam.VIEW_TARGET="viewTarget";

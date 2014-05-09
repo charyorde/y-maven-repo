@@ -1,0 +1,1 @@
+jive.namespace("opensocial",{requestAppDataMediaItemUpload:function(b,c,e){var d=function(i){var j=i.mimeType;var h=i.url;var g=i;delete g.mimeType;delete g.url;var f=opensocial.newMediaItem(j,h,g);if(f.fields_){f=f.fields_}if(typeof e==="function"){e(f)}};var a=shindig.auth.getSecurityToken();gadgets.rpc.call(null,"request_upload_app_data_media_item",d,b,c,a)}});

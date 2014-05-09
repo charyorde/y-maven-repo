@@ -1,0 +1,1 @@
+jive.namespace("ActivityStream");jive.ActivityStream.ActivityStreamExclusionInfo=$Class.extend({init:function(a){this.userID=a.userID;this.objectType=a.objectType;this.objectID=a.objectID;this.containerType=a.containerType;this.containerID=a.containerID;this.interactedObjectType=a.interactedObjectType;this.interactedObjectID=a.interactedObjectID}});

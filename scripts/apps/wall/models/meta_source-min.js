@@ -1,0 +1,1 @@
+jive.namespace("Wall");if(!jive.Wall.MetaSource){jive.Wall.MetaSource=$Class.extend({create:function(a,b,c){},remove:function(b){var a={type:"GET",url:this.META_ENDPOINT+"/remove/"+b,dataType:"json",contentType:"application/json; charset=utf-8",success:function(c){},error:function(c,e,d){console.log("Error jive.Wall.MetaSource fetch"+b+", "+d)}};$j.ajax(a)}})};

@@ -1,0 +1,1 @@
+jive.namespace("Modalizer");jive.Modalizer.Main=jive.oo.Class.extend(function(a){a.init=function(c){var b=this;this.modalView=new jive.Modalizer.ModalView(c);this.modalSource=jive.Modalizer.ModalSource();this.modalView.addListener("launch",function(d,e){b.modalSource.getConfirmation(d,function(f){e.emitSuccess(f)})})}});

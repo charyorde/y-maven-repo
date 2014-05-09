@@ -1,0 +1,202 @@
+<!--
+  ~ $Revision$
+  ~ $Date$
+  ~
+  ~ Copyright (C) 1999-2011 Jive Software. All rights reserved.
+  ~
+  ~ This software is the proprietary information of Jive Software. Use is subject to license terms.
+  -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Unit tests for the Core HTML Plugin</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" href="qunit/qunit.css" type="text/css" media="screen">
+    <script type="text/javascript" src="../../lib/core_ext/array.js"></script>
+    <script type="text/javascript" src="../../lib/core_ext/function.js"></script>
+    <script type="text/javascript" src="../../lib/core_ext/object.js"></script>
+    <script type="text/javascript" src="../../lib/core_ext/string.js"></script>
+    <script type="text/javascript" src="../../jive/namespace.js"></script>
+    <script type="text/javascript" src="../../gen/soy/rte/rte_table.js"></script>
+    <script type="text/javascript" src="../../soy/goog_stub.js"></script>
+    <script type="text/javascript" src="../../soy/soydata.js"></script>
+    <script type="text/javascript" src="../../jive/i18n.js"></script>
+    <script type="text/javascript" src="qunit/qunit.js"></script>
+    <script type="text/javascript" src="qunit/runner.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="diff/diff_match_patch_uncompressed.js"></script>
+    <script type="text/javascript" src="../../lib/jiverscripts/src/conc/observable.js"></script>
+    <script type="text/javascript" src="../../lib/jiverscripts/src/conc/next_tick.js"></script>
+    <script type="text/javascript" src="../../jive/ext/x/x_core.js"></script>
+    <script type="text/javascript" src="../../jive/ext/x/x_event.js"></script>
+    <script type="text/javascript" src="../../jive/ext/x/x_timer.js"></script>
+    <script type="text/javascript" src="../../jive/ext/y/y_core.js"></script>
+    <script type="text/javascript" src="../../jive/ext/y/y_slide.js"></script>
+    <script type="text/javascript" src="../../jive/rte/settings.js"></script>
+    <script type="text/javascript" src="../../jive/rte/paramset.js"></script>
+    <script type="text/javascript" src="../../jive/rte/rte.js"></script>
+    <script type="text/javascript" src="../../jive/rte/rte_list.js"></script>
+    <script type="text/javascript" src="../../jive/rte/rte_layout.js"></script>
+    <script type="text/javascript" src="../../jive/rte/rte_wrap.js"></script>
+    <script type="text/javascript" src="../../jive/rte/macro.js"></script>
+    <script type="text/javascript" src="../../jive/rte/emote.js"></script>
+
+    <script type="text/javascript" src="../../jive/rte/syntax/shCore.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushCpp.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushCss.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushDelphi.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushJava.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushPhp.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushPython.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushRuby.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushSql.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushVb.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushXml.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushPlain.js"></script>
+
+    <script type="text/javascript" src="../../soy/soyutils.js"></script>
+    <script type="text/javascript" src="../../lib/jiverscripts/src/compat/array.js"></script>
+    <script type="text/javascript" src="../../lib/jiverscripts/src/compat/object.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery.oo.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery.popover.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery.spinbox.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery.json.js"></script>
+    <script type="text/javascript" src="../../jive_selection.js"></script>
+    <script type="text/javascript" src="../../post.js"></script>
+    <script type="text/javascript" src="../tiny_mce_src.js"></script>
+    <script type="text/javascript" src="js/jivesettings.js"></script>
+    <script type="text/javascript" src="../plugins/jivebuttons/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jiveemoticons/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivestyle/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivekeyboard/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivelink/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivequote/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivevideo/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jiveimage/editor_plugin_src.js"></script>
+
+    <script type="text/javascript" src="../plugins/html/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/style/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivelists/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/table/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/save/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/advimage/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/advlink/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/inlinepopups/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivemacros/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivemouse/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jiveutil/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jiveselection/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/paste/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivemention/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivetable/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivetablebutton/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivetablecontrols/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivescroll/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jiveblackout/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivecontextmenu/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jiveresize/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../themes/advanced/editor_template_src.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/syntaxhighlightmacro.js"></script>
+    <script type="text/javascript" src="js/jivesettings2.js"></script>
+    <script type="text/javascript">
+        QUnit.config.autostart = false;
+    </script>
+
+<style>
+textarea{
+	width: 700px;
+	height: 500px;
+}</style>
+</head>
+<body>
+<script type="text/javascript">
+
+QUnit.config.autostart = false;
+module("Core HTML Plugin", {
+	autostart: false
+});
+
+if(tinymce.isGecko){
+    test("test select backspace", function() {
+        ed.setContent('<p>Some text.</p>');
+
+        var rng = ed.dom.createRng();
+        rng.setStart(ed.getBody().firstChild.firstChild, 5);
+        rng.setEnd(ed.getBody().firstChild.firstChild, 9);
+        ed.selection.setRng(rng);
+
+        type(ed, 8);
+
+        equals(ed.getContent().replace(/[\r\n]+/g, ''), '<p>Some .</p>');
+    });
+
+    test("test select-all backspace", function() {
+        ed.setContent('<p>Some text.</p>');
+
+        var rng = ed.dom.createRng();
+        rng.setStart(ed.getBody(), 0);
+        rng.setEnd(ed.getBody(), 1);
+        ed.selection.setRng(rng);
+
+        type(ed, 8);
+
+        equals(ed.getContent().replace(/[\r\n]+/g, ''), '');
+    });
+
+    test("test select whole table cell backspace", function() {
+        ed.setContent('<table><tbody><tr><td>some text<br /></td><td>more text<br /></td></tr></tbody></table><p> </p>');
+
+        var rng = ed.dom.createRng();
+        var testNode = ed.getBody().firstChild.firstChild.firstChild.firstChild;
+        rng.setStart(testNode.firstChild, 0);
+        rng.setEnd(testNode, 2);
+        ed.selection.setRng(rng);
+
+        type(ed, 8);
+
+        checkContent(ed, '<table><tbody><tr><td></td><td>more text<br /></td></tr></tbody></table><p> </p>');
+    });
+
+}else{
+    test("placeholder", function(){
+        ok(true);
+    })
+}
+
+
+$j(function(){
+    window.jive.rte.multiRTE = [];
+    var rte = new jive.rte.RTEWrap({
+        $element      : $j("#wysiwygtext"),
+        controller    : {},
+        preset        : jive_settings,
+        preferredMode : "${preferredEditorMode}",
+        startMode     : "${preferredEditorMode}",
+        mobileUI      : false,
+        toggleText    : '${toggleDisplay?js_string}',
+        alwaysUseTabText  : '${alwaysUse?js_string}',
+        editDisabledText : '${editDisabled?js_string}',
+        editDisabledSummary : '${editDisabledSummary?js_string}',
+        communityName : '${SkinUtils.getCommunityName()?js_string}',
+        isEditing     : false
+    });
+    editor.put("wysiwygtext", rte);
+});
+</script>
+
+	<h1 id="qunit-header">Unit tests for the Jive List plugin</h1>
+	<h2 id="qunit-banner"></h2>
+	<div id="qunit-testrunner-toolbar"></div>
+	<h2 id="qunit-userAgent"></h2>
+	<ol id="qunit-tests"></ol>
+
+	<textarea id="wysiwygtext" name="elm1"></textarea>
+	<div>
+		<a href="javascript:alert(tinymce.EditorManager.get('wysiwygtext').getContent({format : 'raw'}));">[getRawContents]</a>
+		<a href="javascript:alert(tinymce.EditorManager.get('wysiwygtext').getContent());">[getContents]</a>
+	</div>
+</body>
+</html>

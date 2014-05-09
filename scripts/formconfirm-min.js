@@ -1,0 +1,1 @@
+jive.FormConfirm=function(c,b){var a=false;$j(document).ready(function(){$j(c+" :input").live("change",function(){a=true});$j(c).submit(function(){a=false})});window.onbeforeunload=function(){if(a){return b}}};

@@ -1,0 +1,1 @@
+jive.rte.ParamSet=function(){var a=this;this.name="";this.deleteAll=false;this.params=new Array();this.addParam=function(c,b){a.params.push({name:c,value:b})}};

@@ -1,0 +1,1 @@
+window.Zapatec=window.Zapatec||{};window.Zapatec.Calendar=window.Zapatec.Calendar||{};Zapatec.Calendar.bootstrap=function(b,c){var a=Zapatec.Calendar.setup(b);if(c){c(a)}};

@@ -1,0 +1,1 @@
+jive.namespace("Filters");jive.Filters.TagSuggestions=jive.RestService.extend(function(a,b){a.resourceType="tag";a.init=function(c){b.init.call(this,c);this.RESOURCE_ENDPOINT=jive.rest.url("/tags/search")};this.get=function(d,c){return this.commonAjaxRequest(new jive.conc.Promise(),"get",{data:$j.extend({query:encodeURIComponent(d)+"*"},c||{}),url:this.RESOURCE_ENDPOINT})}});

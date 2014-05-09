@@ -1,0 +1,1 @@
+jive.namespace("rte");jive.rte.LinkService=jive.RestService.extend(function(a){a.resourceType="rteLink";this.resolve=function(b){var c=this;return c.commonAjaxRequest(new jive.conc.Promise(),"GET",{url:c.getUrl({href:b})})};a.getUrl=function(d){var b=$j.extend({},this.defaultParams,d||{});var c="?"+$j.param(b);return this.RESOURCE_ENDPOINT+c}});

@@ -1,0 +1,9 @@
+Override the default Shindig rpc feature to fix the flash transport for IE7 support.
+
+With the current Shindig version, the flash transport only register the child frame to the flash component once after the 
+ready callback from the flash component.
+The only modified file is the flash.transport.js to call flushHandshakes() function once the 
+JAF container setup app for rpc transport.
+
+Filed SHINDIG-1678 Jira case to track this issue.
+ 

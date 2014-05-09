@@ -1,0 +1,1 @@
+dp.sh.Brushes.Plain=function(){var a="";this.regexList=[];this.CssClass="dp-c"};dp.sh.Brushes.Plain.prototype=new dp.sh.Highlighter();dp.sh.Brushes.Plain.Aliases=["plain"];

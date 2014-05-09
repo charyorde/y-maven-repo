@@ -1,0 +1,1 @@
+jive.namespace("Navbar.Search");define("jive.Navbar.Search.SearchBox",function(){return jive.AbstractView.extend(function(a){this.init=function(b){var c=b.first("form");var d=b.first(".jive-userbar-search-field");c.submit(function(){var e=d.val();var f=e.charAt(e.length-1)=="*";if(e&&!f){c.find("input[name=spotlight]").val("true")}});return this}})});

@@ -1,0 +1,1 @@
+jive.namespace("canvas",{getCanvasDimensions:function(a){gadgets.rpc.call(null,"get_canvas_dimensions",a)},scrollIntoView:function(a){gadgets.rpc.call(null,"scroll_into_view",null,a)}});

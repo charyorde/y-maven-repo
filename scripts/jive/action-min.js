@@ -1,0 +1,1 @@
+jive.action=(function(){var a=_jive_base_url+"/";return{url:function(b,c){var d="";Object.keys(c).forEach(function(e){d+=e+"="+c[e]+"&"});if(d.length>0){d="?"+d.slice(0,d.length-1)}return a+b+".jspa"+d}}})();

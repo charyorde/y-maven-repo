@@ -1,0 +1,1 @@
+jive.NestedRestService=jive.RestService.extend(function(a,b){a.init=function(c){b.init.call(this,c);this.parentType=c.parentType;this.parentID=c.parentID;this.POST_RESOURCE_ENDPOINT=[this.RESOURCE_ENDPOINT,this.parentType,this.parentID].join("/")}});

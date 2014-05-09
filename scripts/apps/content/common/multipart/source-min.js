@@ -1,0 +1,1 @@
+jive.namespace("content.common.multipart");jive.content.common.multipart.Model=jive.RestService.extend(function(a){a.resourceType="multipart/progress";a.pluralizedResourceType=a.resourceType});

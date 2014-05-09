@@ -1,0 +1,1 @@
+jive.namespace("ActionQueue");jive.ActionQueue.ActionResult=$Class.extend({init:function(a,d,b,c){this.userID=a;this.itemID=d;this.actionCode=b;this.message=c}});

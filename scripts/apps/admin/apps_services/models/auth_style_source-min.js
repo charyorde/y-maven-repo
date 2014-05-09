@@ -1,0 +1,1 @@
+jive.namespace("admin.apps.services");jive.admin.apps.services.AuthStyleSource=jive.oo.Class.extend(function(a){var c=jive.app.url({path:"/api/connects/v1/authStyles"});var b=jive.admin.apps.services;this.init=function(){var d=this};this.findAll=function(e){var d=this;$j.ajax({success:function(f){authStyles=f;e(authStyles)},url:c})}});

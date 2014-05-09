@@ -1,0 +1,1 @@
+jive.namespace("blog");jive.blog.TagSortApp=function(){function a(b){var c=$j(b).attr("href").split("?").last().split("&");return c.filter(function(d){return d.match(/^sort=/)}).first().split("=").last()}$j(document).ready(function(){$j(".jive-tags-sort-link a").click(function(){$j("#jivetagform").find("[name=sort]").val(a(this)).end().submit();return false})})};

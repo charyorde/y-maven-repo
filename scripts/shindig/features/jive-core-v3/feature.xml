@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature>
+  <name>jive-core-v3</name>
+  <dependency>jive-namespace</dependency>
+  <dependency>osapi</dependency>
+  <dependency>views</dependency>
+  <dependency>jive-core-container</dependency>
+  <gadget>
+    <script src="provider://v3/core.js?debug=1"/>
+    <script src="people-picker.js"/>
+    <script src="place-picker.js"/>
+  </gadget>
+</feature>

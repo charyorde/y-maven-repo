@@ -1,0 +1,1 @@
+Modernizr.addTest("advancedanimation",function(){var a=document.createElement("div");a.innerHTML="<!--[if lt IE 8]><i></i><![endif]-->";return !a.getElementsByTagName("i").length});

@@ -1,0 +1,1 @@
+jive.namespace("EAEAdmin");jive.EAEAdmin.EAESource=jive.RestService.extend(function(a){a.resourceType="admin/activity-upgrade";a.pluralizedResourceType="admin/activity-upgrade";this.getCurrentProgress=function(){var b=this.RESOURCE_ENDPOINT+"/progress";return this.commonAjaxRequest(new jive.conc.Promise(),"GET",{url:b})}});

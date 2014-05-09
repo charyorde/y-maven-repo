@@ -1,0 +1,1 @@
+$j(function(){$j("#j-browse-item-grid").delegate("a img.binary-preview","click",function(b){var a=$j(this).parent("a").data("preview-url");showPreviewableBinary(a,"");return false})});

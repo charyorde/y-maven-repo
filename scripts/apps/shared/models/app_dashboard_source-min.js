@@ -1,0 +1,1 @@
+jive.AppDashboardSource=jive.RestService.extend(function(a){a.init=function(b){this.resourceType="dashboard";this.pluralizedResourceType="dashboards";this.RESOURCE_ENDPOINT=jive.api.apps(this.pluralizedResourceType)}});

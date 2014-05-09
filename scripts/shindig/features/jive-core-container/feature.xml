@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<feature>
+  <name>jive-core-container</name>
+  <dependency>shindig.uri.ext</dependency>
+  <container>
+    <script src="core-container.js"/>
+  </container>
+    <gadget>
+        <script src="osapi-jive-namespace.js"/>
+        <script src="container-common.js"/>
+    </gadget>
+</feature>

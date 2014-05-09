@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<feature>
+  <name>jive-core-v2</name>
+  <dependency>jive-namespace</dependency>
+  <dependency>osapi</dependency>
+  <dependency>views</dependency>
+  <dependency>jive-core-container</dependency>
+  <gadget>
+    <script src="jive-core.js"/>
+  </gadget>
+</feature>

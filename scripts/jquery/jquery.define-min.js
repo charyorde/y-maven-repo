@@ -1,0 +1,1 @@
+if(window.define&&define.amd){define.amd.jQuery=true};

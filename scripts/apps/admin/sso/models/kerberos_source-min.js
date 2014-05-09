@@ -1,0 +1,1 @@
+jive.namespace("SSOAdminApp");jive.SSOAdminApp.KerberosModel=jive.RestService.extend(function(a){a.resourceType="admin/sso/kerberos";a.pluralizedResourceType=a.resourceType;this.save=function b(d){var c=this.RESOURCE_ENDPOINT+"/save/";return this.commonAjaxRequest(new jive.conc.Promise(),"POST",{url:c,data:Object.toJSON?Object.toJSON(d):JSON.stringify(d)})}});

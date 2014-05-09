@@ -1,0 +1,1 @@
+jQuery.ajaxSetup({dataFilter:function(b,a){return(a==="json"&&b)?jQuery.trim(b.replace(/^throw [^;]*;/,"")):b},beforeSend:function(a){if(typeof _jive_auth_token!="undefined"){a.setRequestHeader("X-J-Token",_jive_auth_token)}}});

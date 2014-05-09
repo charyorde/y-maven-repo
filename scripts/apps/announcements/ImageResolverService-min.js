@@ -1,0 +1,1 @@
+jive.namespace("Announcements");jive.Announcements.ImageResolverService=jive.RestService.extend(function(a,b){a.resourceType="imagesFor";a.pluralizedResourceType="imagesFor";a.init=function(c){b.init.call(this,c);this.defaultParams={containerType:c.containerType}}});

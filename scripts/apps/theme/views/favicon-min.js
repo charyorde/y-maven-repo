@@ -1,0 +1,1 @@
+jive.namespace("Theme");define("jive.Theme.Favicon",function(){return function a(e){var c={},d="/favicon.ico",b="";c.sync=function(){var f=e.getCssValues(),h=f.faviconType,i=f.faviconImageUrl,g=d;if(h==="custom"&&i){g=i}if(g!==b){jive.util.setFavicon(g);b=g}return c};return c}});

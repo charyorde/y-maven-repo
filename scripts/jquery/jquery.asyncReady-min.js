@@ -1,0 +1,1 @@
+(function(){var a=jQuery.fn.ready;jQuery.fn.asyncReady=function(){var b=this,c=arguments;if(jQuery.isReady){setTimeout(function(){a.apply(b,c)},1)}else{return a.apply(b,c)}}})();

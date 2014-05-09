@@ -1,0 +1,1 @@
+gadgets.window=gadgets.window||{};(function(){var a;gadgets.window.adjustHeight=function(d){var c=parseInt(d,10);var b=false;if(isNaN(c)){b=true;c=gadgets.window.getHeight()}if(c!==a&&!isNaN(c)&&!(b&&c===0)){a=c;gadgets.rpc.call(null,"resize_iframe",null,c)}}}());var _IG_AdjustIFrameHeight=gadgets.window.adjustHeight;

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<feature>
+  <name>jive-storage-1.0.0</name>
+  <dependency>jive-namespace</dependency>
+  <gadget>
+    <script src="jive-storage.js"/>
+  </gadget>
+</feature>

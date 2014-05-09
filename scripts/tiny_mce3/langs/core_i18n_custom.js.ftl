@@ -1,0 +1,23 @@
+tinyMCE.addI18n('${language}.table',{
+    desc:"${provider.getValue("tinymce.table.desc")?js_string}",
+    row_up:"${provider.getValue("tinymce.table.row_up")?js_string}",
+    row_down:"${provider.getValue("tinymce.table.row_down")?js_string}",
+    col_left:"${provider.getValue("tinymce.table.col_left")?js_string}",
+    col_right:"${provider.getValue("tinymce.table.col_right")?js_string}"
+});
+tinyMCE.addI18n('${language}.common',{
+    edit_confirm:"${provider.getValue("tinymce.common.edit_confirm")?js_string}",
+    apply:"${provider.getValue("tinymce.common.apply")?js_string}",
+    insert:"${provider.getValue("tinymce.common.insert")?js_string}",
+    update:"${provider.getValue("tinymce.common.update")?js_string}",
+    cancel:"${provider.getValue("tinymce.common.cancel")?js_string}",
+    close:"${provider.getValue("tinymce.common.close")?js_string}",
+    browse:"${provider.getValue("tinymce.common.browse")?js_string}",
+    class_name:"${provider.getValue("tinymce.common.class_name")?js_string}",
+    not_set:"${provider.getValue("tinymce.common.not_set")?js_string}",
+    clipboard_msg:"${provider.getValue("tinymce.common.clipboard_msg")?js_string}",
+    clipboard_no_support:"${provider.getValue("tinymce.common.clipboard_no_support")?js_string}",
+    popup_blocked:"${provider.getValue("tinymce.common.popup_blocked")?js_string}",
+    invalid_data:"${provider.getValue("tinymce.common.invalid_data")?js_string}",
+    more_colors:"${provider.getValue("tinymce.common.more_colors")?js_string}"
+});

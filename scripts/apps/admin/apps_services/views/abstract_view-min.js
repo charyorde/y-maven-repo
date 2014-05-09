@@ -1,0 +1,1 @@
+jive.admin.apps.services.AbstractView=jive.oo.Class.extend(function(a){jive.conc.observable(this);a.getContent="abstract";this.appendTo=function(b){b.append(this.getContent())};this.append=function(b){this.getContent().append(b)}});

@@ -1,0 +1,1 @@
+var saveSelectedRemoteAccordion=function(a){};function loadRemoteAccordions(b){var a=b.remoteIdPrefix,c=b.preferredRemoteView;$j("#status-updates-"+a).accordion({active:'[id="'+c+'"] h4'}).bind("accordionchange",saveSelectedRemoteAccordion)};

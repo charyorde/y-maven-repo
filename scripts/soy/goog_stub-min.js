@@ -1,0 +1,1 @@
+var goog=goog||{};goog.provide=goog.provide||function(){return jive.namespace.apply(window,arguments)};

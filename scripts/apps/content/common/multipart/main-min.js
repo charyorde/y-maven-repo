@@ -1,0 +1,1 @@
+jive.namespace("content.common.multipart");jive.content.common.multipart.Main=jive.oo.Class.extend(function(a){var b=jive.content.common.multipart;this.init=function(c){a.main=this;this.view=new b.View(c);this.model=new b.Model(c);this.view.addListener("update",function(d){a.main.model.findAll().addCallback(function(e){a.main.view.update(e)})})}});

@@ -1,0 +1,1 @@
+jive.namespace("CommentApp");jive.CommentApp.Comment=$Class.extend({init:function(b){var a=this;Object.keys(b).forEach(function(c){a[c]=b[c]})}});

@@ -1,0 +1,1 @@
+$j(document).ready(function(){$j("#j-place-parents-link").click(function(a){$j("#j-place-parents-container").popover({context:$j("#j-place-parents-link"),darkPopover:true,destroyOnClose:false});a.preventDefault()})});

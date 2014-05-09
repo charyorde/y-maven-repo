@@ -1,0 +1,1 @@
+jive.namespace("content.polls");jive.content.polls.MetaSource=$Class.extend({create:function(b,a,c){},remove:function(b){var a={type:"GET",url:this.META_ENDPOINT+"/remove/"+b,dataType:"json",contentType:"application/json; charset=utf-8",success:function(c){},error:function(c,e,d){console.log("Error jive.content.polls.MetaSource fetch"+b+", "+d)}};$j.ajax(a)}});

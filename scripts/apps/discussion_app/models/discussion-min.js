@@ -1,0 +1,1 @@
+jive.namespace("DiscussionApp");jive.DiscussionApp.Discussion=jive.CommentApp.Comment.extend({getFieldProps:function(){var b={};for(var a in this){if(!$j.isFunction(this[a])){b[a]=this[a]}}return b}});

@@ -1,0 +1,1 @@
+jive.namespace("PollView");jive.PollView.Main=function(a){var c=a.pollID,b,d;d=new jive.PollView.PollSource({pollID:c});b=new jive.PollView.PollFormView(".jive-body-poll",{pollID:c});b.addListener("vote",function(f,e){d.vote(f,e,{success:function(g){b.setContent(g);b.vote()},error:function(){var g=poll.getErrorMessage();b.displayError(g)}})})};

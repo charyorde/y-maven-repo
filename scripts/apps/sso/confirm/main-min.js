@@ -1,0 +1,1 @@
+jive.app("sso.confirm");jive.sso.confirm.Main=jive.oo.Class.extend(function(a){var b=jive.sso.confirm;this.init=function(d){var c=this;this.view=new b.View(d);this.model=new b.Model(d);this.view.addListener("save",function(e){c.model.save(e).addCallback(function(f){c.view.success(f)})})}});

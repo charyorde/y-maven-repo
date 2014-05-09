@@ -1,0 +1,1 @@
+define("jive.JAF.Configuration.MsgPoster",["jquery"],function(a){return jive.oo.Class.extend(function(b){this.post_message=function(c,d){var e=jive.apps.configure.renderAppDataErrorMessage({messageKeys:[c]});a("<p/>").html(e).message({style:d})}})});

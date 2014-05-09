@@ -1,0 +1,1 @@
+jive.namespace("Placepicker");jive.Placepicker.SuggestedContainersSource=jive.RestService.extend(function(a,b){a.resourceType="container";a.init=function(c){b.init.call(this,c);$j.extend(this.defaultParams,{containerType:c.containerType,containerID:c.containerID});this.RESOURCE_ENDPOINT=jive.rest.url("/containers/suggested")}});

@@ -1,0 +1,1 @@
+$j(function(){var a=$j("#ask_a_question_looking_for_yes");a.click(function(b){b.preventDefault();$j(this).parents(".jive-info-box").fadeOut()})});

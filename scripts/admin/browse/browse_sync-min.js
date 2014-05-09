@@ -1,0 +1,1 @@
+function poll(){$j.ajax({url:jive.rest.url("/admin/browse/status"),dataType:"json",success:function(a){$j("#status").html(jive.admin.browse.status(a));setTimeout(poll,2000)}})}function cancel(){$j.ajax({url:jive.rest.url("/admin/browse/cancel"),type:"POST"})}$j(document).ready(function(){poll();setTimeout(poll,2000)});

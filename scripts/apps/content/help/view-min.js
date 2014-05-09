@@ -1,0 +1,1 @@
+jive.namespace("help");jive.help.View=jive.AbstractView.extend(function(A){A.init=function(C){var B=this;B.content=$j("#yookos-help");B.options=C||{};$j(document).ready(function(){B.emit("loaded")})};A.getSoyTemplate=jive.html.widget.soy.help.content})

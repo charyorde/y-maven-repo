@@ -1,0 +1,1 @@
+jive.namespace("Navbar.Menu.Satellite");jive.Navbar.Menu.Satellite.Source=jive.RestService.extend(function(a){a.resourceType=a.pluralizedResourceType="satellitemenu"});

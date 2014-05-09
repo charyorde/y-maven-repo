@@ -1,0 +1,1 @@
+jive.namespace("Filters");jive.Filters.Invitation=jive.Filters.Main.extend(function(a,b){this.init=function(d){b.init.call(this,d);var c=this;jive.switchboard.addListener("invitation.create",function(){var e=c.getState().filterID;if(e.length>0&&e[0].indexOf("all")===0){c.loadPage(c.getState(),true)}})}});

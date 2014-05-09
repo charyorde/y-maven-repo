@@ -1,0 +1,1 @@
+jive.namespace("ThreadToDoc");jive.ThreadToDoc.ThreadToDocSource=jive.RestService.extend(function(a){a.resourceType="threadconversion"});

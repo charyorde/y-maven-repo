@@ -1,0 +1,210 @@
+<!--
+  ~ $Revision$
+  ~ $Date$
+  ~
+  ~ Copyright (C) 1999-2011 Jive Software. All rights reserved.
+  ~
+  ~ This software is the proprietary information of Jive Software. Use is subject to license terms.
+  -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Unit tests for the Core Spellchecker Plugin</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" href="qunit/qunit.css" type="text/css" media="screen">
+    <script type="text/javascript" src="../../lib/core_ext/array.js"></script>
+    <script type="text/javascript" src="../../lib/core_ext/function.js"></script>
+    <script type="text/javascript" src="../../lib/core_ext/object.js"></script>
+    <script type="text/javascript" src="../../lib/core_ext/string.js"></script>
+    <script type="text/javascript" src="../../jive/namespace.js"></script>
+    <script type="text/javascript" src="../../gen/soy/rte/rte_table.js"></script>
+    <script type="text/javascript" src="../../soy/goog_stub.js"></script>
+    <script type="text/javascript" src="../../soy/soydata.js"></script>
+    <script type="text/javascript" src="../../jive/i18n.js"></script>
+    <script type="text/javascript" src="qunit/qunit.js"></script>
+    <script type="text/javascript" src="qunit/runner.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="diff/diff_match_patch_uncompressed.js"></script>
+    <script type="text/javascript" src="../../lib/jiverscripts/src/conc/next_tick.js"></script>
+    <script type="text/javascript" src="../../jive/ext/x/x_core.js"></script>
+    <script type="text/javascript" src="../../jive/ext/x/x_event.js"></script>
+    <script type="text/javascript" src="../../jive/ext/x/x_timer.js"></script>
+    <script type="text/javascript" src="../../jive/ext/y/y_core.js"></script>
+    <script type="text/javascript" src="../../jive/ext/y/y_slide.js"></script>
+    <script type="text/javascript" src="../../jive/rte/settings.js"></script>
+    <script type="text/javascript" src="../../jive/rte/paramset.js"></script>
+    <script type="text/javascript" src="../../jive/rte/rte.js"></script>
+    <script type="text/javascript" src="../../jive/rte/rte_list.js"></script>
+    <script type="text/javascript" src="../../jive/rte/rte_wrap.js"></script>
+    <script type="text/javascript" src="../../jive/rte/macro.js"></script>
+    <script type="text/javascript" src="../../jive/rte/emote.js"></script>
+
+    <script type="text/javascript" src="../../jive/rte/syntax/shCore.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushCpp.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushCss.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushDelphi.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushJava.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushPhp.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushPython.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushRuby.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushSql.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushVb.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushXml.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/shBrushPlain.js"></script>
+
+    <script type="text/javascript" src="../../soy/soyutils.js"></script>
+    <script type="text/javascript" src="../../lib/jiverscripts/src/compat/array.js"></script>
+    <script type="text/javascript" src="../../lib/jiverscripts/src/compat/object.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery.oo.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery.popover.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery.spinbox.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery.json.js"></script>
+    <script type="text/javascript" src="../../jive_selection.js"></script>
+    <script type="text/javascript" src="../../autosave.js"></script>
+    <script type="text/javascript" src="../../post.js"></script>
+    <script type="text/javascript" src="../tiny_mce_src.js"></script>
+    <script type="text/javascript" src="js/jivesettings.js"></script>
+    <script type="text/javascript" src="../plugins/jivebuttons/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jiveemoticons/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivestyle/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivekeyboard/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivelink/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivequote/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivevideo/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jiveimage/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/spellchecker/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/html/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/style/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivelists/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/table/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/save/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/advimage/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/advlink/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/inlinepopups/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivemacros/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivemouse/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jiveutil/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jiveselection/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/paste/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivemention/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivetable/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivetablebutton/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivetablecontrols/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivescroll/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jiveblackout/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jivecontextmenu/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../plugins/jiveresize/editor_plugin_src.js"></script>
+    <script type="text/javascript" src="../themes/advanced/editor_template_src.js"></script>
+    <script type="text/javascript" src="../../jive/rte/syntax/syntaxhighlightmacro.js"></script>
+    <script type="text/javascript" src="js/jivesettings2.js"></script>
+    <script type="text/javascript">
+        QUnit.config.autostart = false;
+    </script>
+
+<style type="text/css">
+textarea{
+	width: 700px;
+	height: 500px;
+}</style>
+</head>
+<body>
+<script type="text/javascript">
+
+QUnit.config.autostart = false;
+module("Spellchecker Plugin", {
+    setup: function(){
+        var that = this;
+        this.afterCheck = null;
+        this.checkFinished = function(){
+            if(that.afterCheck){
+                that.afterCheck();
+            }
+            //turn off the spell checker
+            ed.execCommand("mceSpellCheck");
+            start();
+        };
+        ed.onSpellCheckFinished.add(this.checkFinished);
+    },
+    teardown: function(){
+        ed.onSpellCheckFinished.remove(this.checkFinished);
+    }
+});
+
+asyncTest("test spellcheck many misspellings", 1, function() {
+    ed.setContent('<p>test the spel chexor</p><p>test the spel chexor</p><p>test teh spel chexor</p><p>test teh spel chexor</p><p>test teh spel chexor</p><p>test teh spel chexor</p><p>test teh spel chexor</p><p>test teh spel chexor</p><p>test teh spel chexor</p><p>tast the spell checker</p><p>test the spell checxor</p><p>test teh spel checker</p>');
+
+    this.afterCheck = function(){
+        if(tinymce.isIE){
+            equals(ed.getBody().innerHTML.replace(/[\r\n]+/g, '').replace(/<br[^>]*>/, ''), "<P><SPAN class=mceItemHidden class=\"mceItemHidden\">test the <SPAN class=mceItemHiddenSpellWord>spel</SPAN> <SPAN class=mceItemHiddenSpellWord>chexor</SPAN></SPAN></P><P><SPAN class=mceItemHidden class=\"mceItemHidden\">test the <SPAN class=mceItemHiddenSpellWord>spel</SPAN> <SPAN class=mceItemHiddenSpellWord>chexor</SPAN></SPAN></P><P><SPAN class=mceItemHidden class=\"mceItemHidden\">test <SPAN class=mceItemHiddenSpellWord>teh</SPAN> <SPAN class=mceItemHiddenSpellWord>spel</SPAN> <SPAN class=mceItemHiddenSpellWord>chexor</SPAN></SPAN></P><P><SPAN class=mceItemHidden class=\"mceItemHidden\">test <SPAN class=mceItemHiddenSpellWord>teh</SPAN> <SPAN class=mceItemHiddenSpellWord>spel</SPAN> <SPAN class=mceItemHiddenSpellWord>chexor</SPAN></SPAN></P><P><SPAN class=mceItemHidden class=\"mceItemHidden\">test <SPAN class=mceItemHiddenSpellWord>teh</SPAN> <SPAN class=mceItemHiddenSpellWord>spel</SPAN> <SPAN class=mceItemHiddenSpellWord>chexor</SPAN></SPAN></P><P><SPAN class=mceItemHidden class=\"mceItemHidden\">test <SPAN class=mceItemHiddenSpellWord>teh</SPAN> <SPAN class=mceItemHiddenSpellWord>spel</SPAN> <SPAN class=mceItemHiddenSpellWord>chexor</SPAN></SPAN></P><P><SPAN class=mceItemHidden class=\"mceItemHidden\">test <SPAN class=mceItemHiddenSpellWord>teh</SPAN> <SPAN class=mceItemHiddenSpellWord>spel</SPAN> <SPAN class=mceItemHiddenSpellWord>chexor</SPAN></SPAN></P><P><SPAN class=mceItemHidden class=\"mceItemHidden\">test <SPAN class=mceItemHiddenSpellWord>teh</SPAN> <SPAN class=mceItemHiddenSpellWord>spel</SPAN> <SPAN class=mceItemHiddenSpellWord>chexor</SPAN></SPAN></P><P><SPAN class=mceItemHidden class=\"mceItemHidden\">test <SPAN class=mceItemHiddenSpellWord>teh</SPAN> <SPAN class=mceItemHiddenSpellWord>spel</SPAN> <SPAN class=mceItemHiddenSpellWord>chexor</SPAN></SPAN></P><P><SPAN class=mceItemHidden class=\"mceItemHidden\"><SPAN class=mceItemHiddenSpellWord>tast</SPAN> the spell checker</SPAN></P><P><SPAN class=mceItemHidden class=\"mceItemHidden\">test the spell <SPAN class=mceItemHiddenSpellWord>checxor</SPAN></SPAN></P><P><SPAN class=mceItemHidden class=\"mceItemHidden\">test <SPAN class=mceItemHiddenSpellWord>teh</SPAN> <SPAN class=mceItemHiddenSpellWord>spel</SPAN> checker</SPAN></P>",
+                    "words marked as expected");
+        }else{
+            equals(ed.getBody().innerHTML.replace(/[\r\n]+/g, '').replace(/<br[^>]*>/, ''), "<p><span class=\"mceItemHidden\">test the <span class=\"mceItemHiddenSpellWord\">spel</span> <span class=\"mceItemHiddenSpellWord\">chexor</span></span></p><p><span class=\"mceItemHidden\">test the <span class=\"mceItemHiddenSpellWord\">spel</span> <span class=\"mceItemHiddenSpellWord\">chexor</span></span></p><p><span class=\"mceItemHidden\">test <span class=\"mceItemHiddenSpellWord\">teh</span> <span class=\"mceItemHiddenSpellWord\">spel</span> <span class=\"mceItemHiddenSpellWord\">chexor</span></span></p><p><span class=\"mceItemHidden\">test <span class=\"mceItemHiddenSpellWord\">teh</span> <span class=\"mceItemHiddenSpellWord\">spel</span> <span class=\"mceItemHiddenSpellWord\">chexor</span></span></p><p><span class=\"mceItemHidden\">test <span class=\"mceItemHiddenSpellWord\">teh</span> <span class=\"mceItemHiddenSpellWord\">spel</span> <span class=\"mceItemHiddenSpellWord\">chexor</span></span></p><p><span class=\"mceItemHidden\">test <span class=\"mceItemHiddenSpellWord\">teh</span> <span class=\"mceItemHiddenSpellWord\">spel</span> <span class=\"mceItemHiddenSpellWord\">chexor</span></span></p><p><span class=\"mceItemHidden\">test <span class=\"mceItemHiddenSpellWord\">teh</span> <span class=\"mceItemHiddenSpellWord\">spel</span> <span class=\"mceItemHiddenSpellWord\">chexor</span></span></p><p><span class=\"mceItemHidden\">test <span class=\"mceItemHiddenSpellWord\">teh</span> <span class=\"mceItemHiddenSpellWord\">spel</span> <span class=\"mceItemHiddenSpellWord\">chexor</span></span></p><p><span class=\"mceItemHidden\">test <span class=\"mceItemHiddenSpellWord\">teh</span> <span class=\"mceItemHiddenSpellWord\">spel</span> <span class=\"mceItemHiddenSpellWord\">chexor</span></span></p><p><span class=\"mceItemHidden\"><span class=\"mceItemHiddenSpellWord\">tast</span> the spell checker</span></p><p><span class=\"mceItemHidden\">test the spell <span class=\"mceItemHiddenSpellWord\">checxor</span></span></p><p><span class=\"mceItemHidden\">test <span class=\"mceItemHiddenSpellWord\">teh</span> <span class=\"mceItemHiddenSpellWord\">spel</span> checker</span></p>",
+                    "words marked as expected");
+        }
+    };
+
+    setTimeout(function(){
+        ok(false, "spellcheck failed :(");
+        start();
+    },1000);
+
+    ed.execCommand("mceSpellCheck");
+});
+
+asyncTest("test spellcheck with macros", 1, function() {
+    ed.setContent('<p>test the spel chexor</p><pre class="jive_text_macro jive_macro_quote" jivemacro="quote"><p>test the spel chexor</p><p>uniquee mispelings</p></pre><p> </p><pre class="jive_text_macro jive_macro_code" jivemacro="code" ___default_attr="java">public class Foo{<br />&nbsp; public static int aVariableName;<br />&nbsp; public void frobMe();<br />}<p> </p></pre>');
+
+    this.afterCheck = (function(){
+        if(tinymce.isIE){
+            equals(ed.getBody().innerHTML.replace(/[\r\n]+/g, '').replace(/<br[^>]*>/g, '').replace(/(_jivemacro_uid_\d+)/gi, "").replace(/( _jivemacro_uid=['"][^"']*['"])/gi, ""), '<P><SPAN class=mceItemHidden class="mceItemHidden">test the <SPAN class=mceItemHiddenSpellWord>spel</SPAN> <SPAN class=mceItemHiddenSpellWord>chexor</SPAN></SPAN></P><PRE class="jive_text_macro jive_macro_quote" jivemacro="quote"><P><SPAN class=mceItemHidden class="mceItemHidden">test the <SPAN class=mceItemHiddenSpellWord>spel</SPAN> <SPAN class=mceItemHiddenSpellWord>chexor</SPAN></SPAN></P><P><SPAN class=mceItemHidden class="mceItemHidden"><SPAN class=mceItemHiddenSpellWord>uniquee</SPAN> <SPAN class=mceItemHiddenSpellWord>mispelings</SPAN></SPAN></P></PRE><P>&nbsp;</P><PRE class="jive_text_macro jive_macro_code " jivemacro="code" ___default_attr="java">public class Foo{<BR>&nbsp; public static int aVariableName;<BR>&nbsp; public void frobMe();<BR>}<P> </P></PRE><P></P>',
+                    "words marked as expected");
+        }else{
+            equals(ed.getBody().innerHTML.replace(/[\r\n]+/g, '').replace(/<br[^>]*>/g, '').replace(/(_jivemacro_uid_\d+)/gi, "").replace(/( _jivemacro_uid=['"][^"']*['"])/gi, ""), '<p><span class="mceItemHidden">test the <span class="mceItemHiddenSpellWord">spel</span> <span class="mceItemHiddenSpellWord">chexor</span></span></p><pre class="jive_text_macro jive_macro_quote" jivemacro="quote"><p><span class="mceItemHidden">test the <span class="mceItemHiddenSpellWord">spel</span> <span class="mceItemHiddenSpellWord">chexor</span></span></p><p><span class="mceItemHidden"><span class="mceItemHiddenSpellWord">uniquee</span> <span class="mceItemHiddenSpellWord">mispelings</span></span></p></pre><p></p><pre class="jive_text_macro jive_macro_code " jivemacro="code" ___default_attr="java">public class Foo{&nbsp; public static int aVariableName;&nbsp; public void frobMe();}<p></p></pre><p></p>',
+                    "words marked as expected");
+        }
+    });
+
+    setTimeout(function(){
+        ok(false, "spellcheck failed :(");
+        start();
+    },1000);
+
+    ed.execCommand("mceSpellCheck");
+});
+
+
+$j(function(){
+    window.jive.rte.multiRTE = [];
+    var rte = new jive.rte.RTEWrap({
+        $element      : $j("#wysiwygtext"),
+        controller    : {},
+        preset        : jive_settings,
+        autoSave      : new DummyAutoSave(),
+        mobileUI      : false,
+        toggleText    : 'Toggle Mode',
+        alwaysUseTabText  : 'Always use this mode',
+        editDisabledText : 'Edit Disabled',
+        editDisabledSummary : 'Edit Disabled Summary',
+        communityName : 'Unit Tests',
+        isEditing     : false
+    });
+    editor.put("wysiwygtext", rte);
+});
+</script>
+
+	<h1 id="qunit-header">Unit tests for the Jive List plugin</h1>
+	<h2 id="qunit-banner"></h2>
+	<div id="qunit-testrunner-toolbar"></div>
+	<h2 id="qunit-userAgent"></h2>
+	<ol id="qunit-tests"></ol>
+
+	<textarea id="wysiwygtext" name="elm1"></textarea>
+	<div>
+		<a href="javascript:alert(tinymce.EditorManager.get('wysiwygtext').getContent({format : 'raw'}));">[getRawContents]</a>
+		<a href="javascript:alert(tinymce.EditorManager.get('wysiwygtext').getContent());">[getContents]</a>
+	</div>
+</body>
+</html>

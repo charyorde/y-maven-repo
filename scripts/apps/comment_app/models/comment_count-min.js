@@ -1,0 +1,1 @@
+jive.namespace("CommentApp");jive.CommentApp.CommentCount=jive.RestService.extend(function(a){jive.conc.observable(this);a.resourceType="comments";a.pluralizedResourceType=a.resourceType;this.getCommentCount=function(b,d){var c=this.RESOURCE_ENDPOINT+"/"+b+"/"+d;return this.commonAjaxRequest(new jive.conc.Promise(),"GET",{url:c})}});

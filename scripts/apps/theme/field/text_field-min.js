@@ -1,0 +1,1 @@
+jive.namespace("Theme");jive.Theme.TextField=function(a){a.bind("keyup paste change",function(){a.trigger("cssUpdate")});return{setValue:a.val.bind(a)}};

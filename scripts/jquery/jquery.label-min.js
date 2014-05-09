@@ -1,0 +1,1 @@
+(function(a){a.fn.label=function(b){var d=a(),c=a("label").filter("[for]");this.filter(":input").not("button").each(function(){var f=a(this),e=f.closest("label");if(e.length>0){d=d.add(e)}else{if(f.is("[id]")){c.filter("[for="+f.attr("id")).each(function(){d=d.add(this);return false})}}});return b?d.filter(b):d}})(jQuery);

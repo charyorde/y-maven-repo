@@ -1,0 +1,1 @@
+jive.namespace("Wall");if(!jive.Wall.LinkMetaView){jive.Wall.LinkMetaView=jive.Wall.MetaView.extend({init:function(g,a,f,b,c){this._super(g,a,f,b,c);var d=this;var e=this._$container;e.find("form").submit(function(){d.emit("completed",$j(this));return false});this._$linkContainer=f.find(".link-container")},add:function(b){var a=b.title;this._$linkContainer.append(a)}})};

@@ -1,0 +1,1 @@
+jive.namespace("PublishBar");jive.PublishBar.PublishBarSource=jive.RestService.extend(function(a,b){a.resourceType="container";a.init=function(c){c=c||{};b.init.call(this,c);this.RESOURCE_ENDPOINT=jive.rest.url("/publishbar")}});

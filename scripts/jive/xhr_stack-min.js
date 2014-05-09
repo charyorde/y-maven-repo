@@ -1,0 +1,1 @@
+define("jive.XhrStack",function(){return function(){var a=jive.conc.observable({}),c=0,b;var d=function(g,f,e){if(g===c){a.emit.apply(a,Array.prototype.slice.call(arguments,2))}};a.add=function(f,g){c=c+1;a.empty();b=f;var h=d.curry(c,g,"success"),e=d.curry(c,g,"failure");b.then(h).fail(e);return a};a.empty=function(){b&&b.abort();b=undefined;return a};return a}});

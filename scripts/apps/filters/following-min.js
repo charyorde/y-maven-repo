@@ -1,0 +1,1 @@
+jive.namespace("Filters");jive.Filters.Following=jive.Filters.Main.extend(function(a,b){this.init=function(d){b.init.call(this,d);var c=this;jive.switchboard.addListener("follow.destroy",function(f){var e=c.getState().filterID;if(e.length>0&&e[0].indexOf("following")===0){c.removeGridItem({id:f.objectId||f.objectID,type:f.objectType})}})}});

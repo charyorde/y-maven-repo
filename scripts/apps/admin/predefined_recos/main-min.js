@@ -1,0 +1,1 @@
+jive.namespace("PredefinedRecos");jive.PredefinedRecos.Main=function(c){var a=new jive.PredefinedRecos.PredefinedRecoSource(c);var b=new jive.PredefinedRecos.PredefinedRecoView(c);b.addListener("remove-reco",function(d,f,e){a.remove(d,f,e)}).addListener("add-reco",function(d,e){a.add(d,e)})};

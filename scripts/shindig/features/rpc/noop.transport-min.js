@@ -1,0 +1,1 @@
+gadgets.rpctx=gadgets.rpctx||{};if(!gadgets.rpctx.noop){gadgets.rpctx.noop=function(){return{getCode:function(){return"noop"},isParentVerifiable:function(){return false},init:function(a,b){return true},setup:function(b,a){return true},call:function(a,c,b){return false}}}()};

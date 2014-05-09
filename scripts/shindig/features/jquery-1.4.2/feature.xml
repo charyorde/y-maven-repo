@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<feature>
+  <name>jquery-1.4.2</name>
+  <gadget>
+    <script src="jquery.js"/>
+  </gadget>
+</feature>

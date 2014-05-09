@@ -1,0 +1,1 @@
+jive.namespace("FollowApp");jive.FollowApp.FollowSource=jive.RestService.extend(function(a){a.resourceType="follow";this.destroy=function(b){var c=new jive.conc.Promise();$j.ajax({type:"DELETE",url:this.RESOURCE_ENDPOINT+"/"+b.objectType+"/"+b.objectID,success:function(){c.emitSuccess()},error:function(d){c.emitError(null,d.status)},timeout:30000});return c}});

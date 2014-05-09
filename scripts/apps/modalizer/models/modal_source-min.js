@@ -1,0 +1,1 @@
+jive.namespace("Modalizer");jive.Modalizer.ModalSource=jive.oo.Class.extend(function(a){this.getConfirmation=function(b,c){$j.ajax({url:b,type:"GET",dataType:"html",success:function(d){c(d)},error:function(){alert("failed..")}})}});

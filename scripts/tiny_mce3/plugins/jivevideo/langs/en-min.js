@@ -1,0 +1,1 @@
+tinyMCE.addI18n("en.jivevideo",{link_desc:"Insert Video"});

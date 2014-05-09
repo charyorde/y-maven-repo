@@ -1,0 +1,1 @@
+jive.namespace("PollView");jive.PollView.PollSource=function(b){var g=b.pollID,f=jive.rest.url("/polls"),c=f+"/",e;function d(h){if(typeof h=="function"){h={success:h}}return h}function a(j,i,h){h=d(h);$j.ajax({type:"POST",url:c+j+"/votes",dataType:"json",data:{optionID:i},success:function(k){if(typeof h.success=="function"){e=k;h.success.call(j,e)}}})}this.vote=a};

@@ -1,0 +1,1 @@
+jive.BookmarkSource=jive.RestService.extend(function(a){a.resourceType="bookmark"});

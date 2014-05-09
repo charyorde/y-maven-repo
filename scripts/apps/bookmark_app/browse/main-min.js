@@ -1,0 +1,1 @@
+jive.namespace("BookmarkApp.browse");jive.BookmarkApp.browse.Main=jive.Filters.Main.extend(function(a,b){a.init=function(d){var c=this;b.init.call(this,d);jive.switchboard.addListener("bookmark.update",function(e){c.loadPage(c.getState(),true)})}});

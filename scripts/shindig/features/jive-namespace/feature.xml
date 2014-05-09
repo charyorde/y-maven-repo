@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<feature>
+  <name>jive-namespace</name>
+  <gadget>
+    <script src="jive-namespace.js"/>
+    <!-- <script src="taming.js"/> - not sure if needed. related to caja -->
+  </gadget>
+</feature>

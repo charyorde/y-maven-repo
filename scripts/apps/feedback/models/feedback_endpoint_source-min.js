@@ -1,0 +1,1 @@
+define("jive.Feedback.FeedbackEndpointSource",["jive.RestService"],function(a){return a.extend(function(b,c){b.resourceType="feedbackEndpoint";b.init=function(d){c.init.call(this,d);this.RESOURCE_ENDPOINT=jive.rest.url("/feedback_endpoint");this.POST_RESOURCE_ENDPOINT=this.RESOURCE_ENDPOINT}})});

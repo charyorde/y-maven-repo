@@ -1,0 +1,1 @@
+gadgets.window=gadgets.window||{};(function(){gadgets.window.getHeight=function(){return gadgets.window.getDimen(1)}}());
